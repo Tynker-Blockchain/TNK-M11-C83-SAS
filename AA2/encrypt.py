@@ -15,23 +15,19 @@ def isPrime(n):
 '''
 
 # Take two numbers as parameters  x,y
-def generatePrime(x,y):
-    # Create a flag variable found and set it to False
-    found = False
-    prime = random.randint(x, y)
+def generatePrime(x, y):
+    # Initialize prime to x 
+    prime = x
+    
     while not isPrime(prime):
-        prime += 1
-        # Break the loop if  prime becomes greater then y
+        prime += 1     
+        # Check if prime becomes greater then y and return "Prime dose not exits in given range"
         if prime > y:
-            break
-
-    if isPrime(prime):
-        return prime
-    else:
-        return "Prime dose not exits in given range"    
-
+            return "Prime dose not exits in given range"
+        
     return prime
 
-# Pass two numbers between which you want to find prime number
-num = generatePrime(10, 20)
+# Pass two numbers between which you want to find prime number 
+num = generatePrime(40, 200)
 print("Prime number in given range:", num)
+
